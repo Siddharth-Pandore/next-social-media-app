@@ -17,3 +17,6 @@
 * 🗃️ Database Integration with Prisma
 * 🚀 Server Actions & Forms
 * ⚡ Optimistic Updates
+
+# Run the app
+=> npm run dev
