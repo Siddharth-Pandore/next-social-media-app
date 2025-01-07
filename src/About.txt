@@ -1,0 +1,76 @@
+//NOTE - TECH STACK
+1) ReactJS
+2) NextJS Full stack framework build on top of ReactJS
+3) TailwindCSS & ChadCN for Styling
+4) Clerk for Auth
+5) Neon for Postgress DB
+6) Prisma for ORM
+7) Uploadthing for the image Uploadthing
+8) Vercel for Deployment.
+
+//IMP - Every Component in nextjs is a Server side component
+
+//STUB - insert "suppressHydrationWarning" attribute in <html> tag under layout.tsx
+
+//NOTE - INITIALIZATION
+1) npx create-next-app@14.2.15 .
+
+2) npm install @clerk/nextjs
+   Copy the .env.local
+   create and copy middleware.ts
+
+3) npx shadcn@latest init
+   npx shadcn@latest add button
+   //ANCHOR - For Dark Mode
+   * npm install next-themes
+   * copy theme provider in components
+   * wrap the {children} in layout.tsx with the <ThemeProvider>
+   * Create a file under component as ModeToggle.tsx
+     copy the code from github repo and paste
+   * npx shadcn@latest add sheet (for the menu icon in mobile view)
+     create a component as Navbar.tsx
+     insert the Navbar.tsx in the layout.tsx file under the <ThemeProvider>
+
+4) Integrating DB in the application (Postgres) provided by (Neon)
+   Open Neon.com signup using github create project 
+   copy the key and paste inside .env
+   save it with DATABASE_URL = "key"
+   //TODO - Prisma is an ORM (Object-Relational Mapping)
+     Think of Prisma as a translator between your code and your DB
+   //Development Mode
+   npm i prisma --save-dev  
+   //Production Mode
+   npm i @prisma/client
+   npx prisma init
+   To push the local schema into the Neon
+   npx prisma db push
+
+5) Implimenting Sidebar
+   //If user is not authenticated => UnAuthenticatedSidebar
+   //If user is authenticated => AutheticatedSidebar
+     For the authenticated user dataz we are going to fetch from DBz not from clerk.
+   npx shadcn@latest add card   
+   npx shadcn@latest add avatar
+   npx shadcn@latest add separator
+
+6) The main section (center) is going to be mount in page.tsx/Home page  
+   npx shadcn@latest add textarea 
+   npm i react-hot-toast
+   npm i date-fns
+
+7) For the Notifications page
+   npx shadcn@latest add skeleton   
+   npx shadcn@latest add scroll-area
+
+8) For the Profile page
+   npx shadcn@latest add dialog
+   npx shadcn@latest add tabs
+   npx shadcn@latest add input
+   npx shadcn@latest add label
+
+9) If a user not found => not-found.tsx
+
+10) To share an Image as Post
+   Uploadthing.com
+   npm install uploadthing @uploadthing/react
+   copy the api key and paste it into .env
