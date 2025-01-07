@@ -1,4 +1,4 @@
-# Hi-Me
+# Hi-Me  (Next Gen social-media-app)
 # https://next-social-media-app-rho.vercel.app/
 ![Hi-Me](https://github.com/user-attachments/assets/d104fa4b-41a5-4804-a243-171f78b04b0b)
 
